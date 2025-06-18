@@ -1,4 +1,5 @@
 # Paket utama yang kemungkinan besar Anda gunakan langsung
+streamlit
 pandas==2.2.2
 numpy==1.26.2
 matplotlib==3.9.0
