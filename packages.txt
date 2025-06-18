@@ -1,0 +1,5 @@
+# packages.txt
+libffi-dev
+build-essential
+pkg-config
+python3-dev
