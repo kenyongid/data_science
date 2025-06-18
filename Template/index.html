@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Analisis Kinerja PT Timah Tbk</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container-box {
+            background-color: white;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+        .section-title {
+            color: #1f77b4;
+            text-align: center;
+            font-size: 2rem; /* h2 equivalent */
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .subsection-title {
+            color: #2A3F5F;
+            font-size: 1.5rem; /* h3 equivalent */
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .info-box {
+            background-color: #e0f2f7; /* Light blue */
+            border-left: 5px solid #1f77b4;
+            border-radius: 8px; /* Rounded corners */
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #0d47a1;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            border-radius: 8px;
+            overflow: hidden; /* Ensures rounded corners apply to table */
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            color: #444;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .strategy-box {
+            background-color: #f8f9fa;
+            border: 2px solid #2D7DD2;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 2rem;
+        }
+        .strategy-header {
+            text-align: center;
+            color: #2D7DD2;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .strategy-subheader {
+            text-align: center;
+            color: #5C9E47;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .col-content h4 {
+            font-weight: bold;
+            color: #333;
+            margin-top: 1rem;
+        }
+        .col-content ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 1rem;
+        }
+        .col-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        .expander-header {
+            background-color: #e6e6e6; /* Light gray */
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .expander-content {
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 15px;
+            display: none; /* Hidden by default */
+        }
+        .expander-header:hover {
+            background-color: #dcdcdc;
+        }
+        .expander-header::after {
+            content: ' ▼';
+            float: right;
+            transition: transform 0.3s ease;
+        }
+        .expander-header.active::after {
+            transform: rotate(180deg);
+        }
+        .clustering-header {
+             text-align: center;
+             color: #2A3F5F;
+             font-size: 2rem;
+             font-weight: bold;
+             margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-7xl mx-auto container-box">
+        <!-- Judul Utama Aplikasi -->
+        <h1 class="text-center text-[#2A3F5F] text-4xl font-bold mb-8">
+            ANALISIS KOMPREHENSIF KINERJA OPERASIONAL & KEUANGAN PT TIMAH TBK (2022-2025) 📈
+        </h1>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Dashboard Kinerja Utama -->
+        <h2 class="section-title">📊 Dashboard Kinerja Utama</h2>
+        <hr class="my-4 border-gray-200">
+
+        <!-- Baris Grafik 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Grafik 1: Tren Produksi & Penjualan Timah -->
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                <h3 class="subsection-title">📈 Tren Produksi & Penjualan Timah</h3>
+                <img src="https://placehold.co/800x500/A2D2FF/000000?text=Grafik+Produksi+Penjualan" alt="Grafik Tren Produksi & Penjualan Timah" class="w-full h-auto rounded-lg mb-4">
+                <div class="info-box w-full">
+                    Produksi dan penjualan mengalami penurunan signifikan pada 2023, diikuti sedikit pemulihan pada 2024.
+                </div>
+            </div>
+
+            <!-- Grafik 2: Distribusi Pasar Ekspor Timah -->
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                <h3 class="subsection-title">🌍 Distribusi Pasar Ekspor Timah</h3>
+                <img src="https://placehold.co/700x700/D4F9D4/000000?text=Grafik+Distribusi+Ekspor" alt="Grafik Distribusi Pasar Ekspor Timah" class="w-full h-auto rounded-lg mb-4">
+                <div class="info-box w-full">
+                    Korea Selatan dan Singapura mendominasi ekspor (37%), peluang diversifikasi pasar masih terbuka lebar.
+                </div>
+            </div>
+
+            <!-- Grafik 3: Kinerja Keuangan (Pendapatan & Laba) -->
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                <h3 class="subsection-title">💰 Kinerja Keuangan (Pendapatan & Laba)</h3>
+                <img src="https://placehold.co/800x500/FFF9C4/000000?text=Grafik+Kinerja+Keuangan" alt="Grafik Kinerja Keuangan" class="w-full h-auto rounded-lg mb-4">
+                <div class="info-box w-full">
+                    Tahun 2023 mengalami kerugian Rp 0.45T, namun mulai pulih pada 2024 dengan laba Rp 0.3T meski pendapatan belum sepenuhnya recover.
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Baris Grafik 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Grafik 4: Cadangan Timah & Investasi Eksplorasi -->
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                <h3 class="subsection-title">⛰️ Cadangan Timah & Investasi Eksplorasi</h3>
+                <img src="https://placehold.co/800x500/FFC9B8/000000?text=Grafik+Cadangan+Eksplorasi" alt="Grafik Cadangan Timah & Investasi Eksplorasi" class="w-full h-auto rounded-lg mb-4">
+                <div class="info-box w-full">
+                    Cadangan menurun 5.3% dalam 3 tahun meski investasi eksplorasi meningkat 20%, menunjukkan tantangan dalam penambahan cadangan baru.
+                </div>
+            </div>
+
+            <!-- Grafik 5: Perubahan Kinerja (2023 vs 2022) -->
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                <h3 class="subsection-title">📉 Perubahan Kinerja (2023 vs 2022)</h3>
+                <img src="https://placehold.co/800x500/FFDDC1/000000?text=Grafik+Perubahan+Kinerja" alt="Grafik Perubahan Kinerja" class="w-full h-auto rounded-lg mb-4">
+                <div class="info-box w-full">
+                    Semua indikator kinerja mengalami penurunan drastis pada 2023: Laba turun 143% menjadi rugi, penjualan dan pendapatan turun >25%.
+                </div>
+            </div>
+
+            <!-- Grafik 6: Proyeksi Produksi Timah 2025 -->
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                <h3 class="subsection-title">🔮 Proyeksi Produksi Timah 2025</h3>
+                <img src="https://placehold.co/800x500/C1D9F1/000000?text=Grafik+Proyeksi+Produksi" alt="Grafik Proyeksi Produksi Timah 2025" class="w-full h-auto rounded-lg mb-4">
+                <div class="info-box w-full">
+                    Model linear memprediksi produksi 2025: 14,337 ton (+/-% vs 2024), asumsi tren pemulihan berlanjut.
+                    <!-- Note: Actual calculated percentage from Python would be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Analisis Strategis & Rekomendasi -->
+        <div class="strategy-box">
+            <h2 class="strategy-header">ANALISIS STRATEGIS & REKOMENDASI PT TIMAH TBK</h2>
+            <h3 class="strategy-subheader">Rangkuman Eksekutif & Strategi Pemulihan 2025</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                <div class="col-content">
+                    <div class="expander-header" onclick="toggleExpander(this)">📊 **PERFORMA 2022-2024**</div>
+                    <div class="expander-content">
+                        <h4>PERFORMA 2022-2024:</h4>
+                        <ul>
+                            <li>Produksi: 19,825 -> 15,500 ton (**-21.8%**)</li>
+                            <li>Penjualan: 20,805 -> 16,000 ton (**-23.1%**)</li>
+                            <li>Pendapatan: Rp 12.5T -> Rp 9.2T (**-26.4%**)</li>
+                            <li>Laba: Rp 1.04T -> Rp 0.3T (**-71.2%**)</li>
+                        </ul>
+                        <h4>TANTANGAN UTAMA:</h4>
+                        <ul>
+                            <li>Volatilitas harga timah global</li>
+                            <li>Peningkatan biaya operasional</li>
+                            <li>Penurunan cadangan (-5.3%)</li>
+                            <li>Ketergantungan pasar ekspor (88%)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-content">
+                    <div class="expander-header" onclick="toggleExpander(this)">🚀 **STRATEGI PEMULIHAN 2025**</div>
+                    <div class="expander-content">
+                        <h4>DIVERSIFIKASI PRODUK:</h4>
+                        <ul>
+                            <li>Tingkatkan produk olahan bernilai tambah</li>
+                            <li>Kembangkan produk turunan elektronik</li>
+                        </ul>
+                        <h4>EFISIENSI OPERASIONAL:</h4>
+                        <ul>
+                            <li>Target penghematan biaya 15%</li>
+                            <li>Teknologi penambangan modern</li>
+                            <li>Optimasi <i>supply chain</i></li>
+                        </ul>
+                        <h4>EKSPANSI PASAR:</h4>
+                        <ul>
+                            <li>Penetrasi pasar India (+15%)</li>
+                            <li>Pengembangan pasar domestik</li>
+                            <li>Diversifikasi regional ekspor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-content">
+                    <div class="expander-header" onclick="toggleExpander(this)">🎯 **TARGET & PROYEKSI 2025**</div>
+                    <div class="expander-content">
+                        <h4>SASARAN OPERASIONAL:</h4>
+                        <ul>
+                            <li>Produksi: 17,000 ton (+9.7%)</li>
+                            <li>Penjualan: 18,000 ton (+12.5%)</li>
+                            <li>Margin laba: 8-10%</li>
+                            <li>Debt-to-equity: &lt;1.0</li>
+                        </ul>
+                        <h4>MANAJEMEN RISIKO:</h4>
+                        <ul>
+                            <li><i>Hedging</i> harga komoditas</li>
+                            <li>Diversifikasi sumber pendanaan</li>
+                            <li>Investasi R&D teknologi</li>
+                        </ul>
+                        <h4>INDIKATOR KEBERHASILAN:</h4>
+                        <ul>
+                            <li>ROA > 5% | ROE > 8%</li>
+                            <li><i>Current ratio</i> > 1.5</li>
+                            <li><i>Debt service coverage</i> > 2.0</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-600 italic mt-6">Sumber: Laporan Tahunan PT TIMAH TBK 2022-2024 | Analisis: Strategic Management Team | Proyeksi berdasarkan tren historis & analisis fundamental</p>
+        </div>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Ringkasan Statistik -->
+        <h2 class="clustering-header">RINGKASAN ANALISIS KINERJA PT TIMAH TBK (2022-2024)</h2>
+        <div class="table-responsive mb-8 container-box">
+            <h3 class="subsection-title text-center text-[#2A3F5F] mb-4">Tabel Performa</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>METRIK</th>
+                        <th>2022</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>Δ 2023</th>
+                        <th>Δ 2024</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Produksi Timah (ton)</td>
+                        <td>19,825</td>
+                        <td>15,340.0</td>
+                        <td>15,500.0</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Penjualan Timah (ton)</td>
+                        <td>20,805</td>
+                        <td>15,000.0</td>
+                        <td>16,000.0</td>
+                        <td>-27.9%</td>
+                        <td>6.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Pendapatan (Rp Triliun)</td>
+                        <td>12.5</td>
+                        <td>8.39</td>
+                        <td>9.2</td>
+                        <td>-32.9%</td>
+                        <td>9.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Laba Bersih (Rp Triliun)</td>
+                        <td>1.04</td>
+                        <td>-0.45</td>
+                        <td>0.3</td>
+                        <td>-143.3%</td>
+                        <td>166.7%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive mb-8 container-box">
+            <h3 class="subsection-title text-center text-[#2A3F5F] mb-4">Proyeksi 2025</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Produksi</th>
+                        <th>Target</th>
+                        <th>Asumsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prediksi Linear</td>
+                        <td>14,337</td> <!-- Example value, actual from Python -->
+                        <td>17,000</td>
+                        <td>Optimis</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2 class="clustering-header text-[#2A3F5F] mb-4">REKOMENDASI PRIORITAS STRATEGIS:</h2>
+        <ul class="list-disc ml-8 text-sm mb-8 container-box">
+            <li>Fokus pada efisiensi biaya untuk meningkatkan profitabilitas</li>
+            <li>Diversifikasi produk dengan nilai tambah tinggi (refined tin products)</li>
+            <li>Ekspansi ke pasar non-tradisional untuk mengurangi risiko konsentrasi</li>
+            <li>Intensifikasi eksplorasi untuk menambah cadangan jangka panjang</li>
+            <li>Implementasi hedging strategy untuk mitigasi volatilitas harga</li>
+        </ul>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Analisis Clustering -->
+        <h2 class="clustering-header">ANALISIS CLUSTERING KINERJA PT TIMAH TBK (2022-2024)</h2>
+        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md mb-8">
+            <img src="https://placehold.co/1000x700/F2F2F2/000000?text=Grafik+Analisis+Clustering" alt="Grafik Analisis Clustering Kinerja" class="w-full h-auto rounded-lg mb-4">
+            <h3 class="subsection-title text-center">Clustering Kinerja PT Timah Tbk (2022–2024)</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="col-content container-box">
+                <div class="expander-header" onclick="toggleExpander(this)">🔍 **Detail Analisis Clustering**</div>
+                <div class="expander-content">
+                    <h3 class="font-bold text-base mb-2">Kategori Kinerja:</h3>
+                    <ul class="list-disc ml-5">
+                        <li><b>Kinerja Tinggi</b>: Penjualan &gt; 19.000 ton, Pendapatan &gt; Rp 10T</li>
+                        <li><b>Kinerja Sedang</b>: Penjualan 16.000–18.000 ton, Pendapatan Rp 8.5–10T</li>
+                        <li><b>Kinerja Rendah</b>: Penjualan &lt; 16.000 ton, Pendapatan &lt; Rp 8.5T</li>
+                    </ul>
+                    <h4 class="font-bold text-base mb-2">Contoh:</h4>
+                    <ul class="list-disc ml-5">
+                        <li>2022 → Tinggi</li>
+                        <li>2023 → Rendah</li>
+                        <li>2024 → Sedang</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-content container-box">
+                <div class="expander-header" onclick="toggleExpander(this)">📈 **Analisis Pergerakan Kinerja**</div>
+                <div class="expander-content">
+                    <h3 class="font-bold text-base mb-2">2022 → 2023: Penurunan tajam</h3>
+                    <ul class="list-disc ml-5">
+                        <li>Penjualan: 20.805 → 15.000 ton (↓ 27.9%)</li>
+                        <li>Pendapatan: Rp 12.5T → Rp 8.39T (↓ 32.9%)</li>
+                        <li>Laba: Rp 1.04T → -Rp 0.45T (↓ 143.3%)</li>
+                    </ul>
+                    <h3 class="font-bold text-base mb-2">2023 → 2024: Pemulihan parsial</h3>
+                    <ul class="list-disc ml-5">
+                        <li>Penjualan: 15.000 → 16.000 ton (↑ 6.7%)</li>
+                        <li>Pendapatan: Rp 8.39T → Rp 9.2T (↑ 9.7%)</li>
+                        <li>Laba: -Rp 0.45T → Rp 0.3T (↑ 166.7%)</li>
+                    </ul>
+                    <h3 class="font-bold text-base mb-2">Target 2025:</h3>
+                    <ul class="list-disc ml-5">
+                        <li>Penjualan: 18.000 ton</li>
+                        <li>Pendapatan: Rp 10.5T</li>
+                        <li>Laba: Rp 0.84T</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-8 border-gray-300">
+
+        <!-- Footer -->
+        <p class="text-center text-sm text-gray-600 italic">
+            Sumber: Laporan Tahunan PT TIMAH TBK 2022-2024 | Analisis: Strategic Management Team | Proyeksi berdasarkan tren historis & analisis fundamental
+        </p>
+
+    </div>
+
+    <script>
+        // JavaScript untuk fungsionalitas expander (opsional, karena ini HTML statis)
+        function toggleExpander(header) {
+            const content = header.nextElementSibling;
+            header.classList.toggle('active');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
