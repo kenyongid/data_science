@@ -1,4 +1,3 @@
-# packages.txt
 libffi-dev
 build-essential
 pkg-config
