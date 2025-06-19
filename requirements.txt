@@ -1,9 +1,9 @@
 streamlit
-pandas==2.2.2
-numpy==1.26.2
-matplotlib==3.9.0
-seaborn==0.13.2
-scikit-learn==1.5.2
-mysql-connector-python==8.2.0
-openpyxl==3.1.5
-prettytable==3.9.0
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+mysql-connector-python==8.2.0 # Tetap ini jika spesifik
+openpyxl
+prettytable
